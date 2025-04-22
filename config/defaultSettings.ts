@@ -7,15 +7,15 @@ const Settings: ProLayoutProps & {
   pwa?: boolean;
   logo?: string;
 } = {
-  navTheme: 'light',
-  // 拂晓蓝
-  colorPrimary: '#1890ff',
-  layout: 'mix',
-  contentWidth: 'Fluid',
-  fixedHeader: false,
-  fixSiderbar: true,
-  colorWeak: false,
-  title: 'Ant Design Pro',
+  "navTheme": "light",
+  "layout": "mix",
+  "contentWidth": "Fluid",
+  "fixedHeader": false,
+  "fixSiderbar": true,
+  "colorPrimary": "#1677FF",
+  "splitMenus": false,
+  "siderMenuType": "sub",
+  title: 'GG API开放平台',
   pwa: true,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   iconfontUrl: '',
