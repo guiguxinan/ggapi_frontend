@@ -11,6 +11,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseInterfaceInfo_ = {
+    code?: number;
+    data?: InterfaceInfo;
+    message?: string;
+  };
+
   type BaseResponseLoginUserVO_ = {
     code?: number;
     data?: LoginUserVO;
@@ -81,6 +87,11 @@ declare namespace API {
     id?: number;
   };
 
+  type getInterfaceInfoByIdUsingGETParams = {
+    /** id */
+    id?: number;
+  };
+
   type getPostVOByIdUsingGETParams = {
     /** id */
     id?: number;
@@ -96,6 +107,10 @@ declare namespace API {
     id?: number;
   };
 
+  type IdRequest = {
+    id?: number;
+  };
+
   type InterfaceInfo = {
     createTime?: string;
     description?: string;
@@ -104,7 +119,6 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
-    requestParams?: string;
     responseHeader?: string;
     status?: number;
     updateTime?: string;
@@ -324,8 +338,6 @@ declare namespace API {
     createTime?: string;
     id?: number;
     isDelete?: number;
-    mpOpenId?: string;
-    unionId?: string;
     updateTime?: string;
     userAccount?: string;
     userAvatar?: string;

@@ -32,12 +32,57 @@ export async function deleteInterfaceInfoUsingPost(
   });
 }
 
-/** listPostByPage Get /api/interfaceInfo/list/page */
+/** getInterfaceInfoById GET /api/interfaceInfo/get */
+export async function getInterfaceInfoByIdUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.getInterfaceInfoByIdUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseInterfaceInfo_>('/api/interfaceInfo/get', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
+/** listPostByPage POST /api/interfaceInfo/list/page */
 export async function listPostByPageUsingPost(
   body: API.InterfaceInfoQueryRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageInterfaceInfo_>('/api/interfaceInfo/list/page', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** offlineInterfaceInfo POST /api/interfaceInfo/offline */
+export async function offlineInterfaceInfoUsingPost(
+  body: API.IdRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/interfaceInfo/offline', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** onlineInterfaceInfo POST /api/interfaceInfo/online */
+export async function onlineInterfaceInfoUsingPost(
+  body: API.IdRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/interfaceInfo/online', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
