@@ -1,4 +1,5 @@
 ﻿import type { RequestOptions } from '@@/plugin-request/request';
+// @ts-ignore
 import type { RequestConfig } from '@umijs/max';
 
 // 与后端约定的响应数据格式
@@ -28,6 +29,7 @@ export const requestConfig: RequestConfig = {
 
   // 响应拦截器
   responseInterceptors: [
+    // @ts-ignore
     (response) => {
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;

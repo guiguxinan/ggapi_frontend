@@ -231,14 +231,19 @@ const TableList: React.FC = () => {
       valueType: 'text',
     },
     {
+      title: '请求参数',
+      dataIndex: 'requestParams',
+      valueType: 'text',
+    },
+    {
       title: '请求头',
       dataIndex: 'requestHeader',
-      valueType: 'textarea',
+      valueType: 'jsonCode',
     },
     {
       title: '响应头',
       dataIndex: 'responseHeader',
-      valueType: 'textarea',
+      valueType: 'jsonCode',
     },
     {
       title: '状态',
@@ -281,25 +286,25 @@ const TableList: React.FC = () => {
         >
           修改
         </a>,
-        record.status === 1 ?
-        <a
-          key="online"
-          onClick={() => {
-            handleOnline(record);
-          }}
-        >
-          发布
-        </a> : null,
         record.status === 0 ?
-        <Button
-          type="text"
-          danger
+        <a
           key="offline"
           onClick={() => {
             handleOffline(record);
           }}
         >
           下线
+        </a> : null,
+        record.status === 1 ?
+        <Button
+          type="text"
+          danger
+          key="online"
+          onClick={() => {
+            handleOnline(record);
+          }}
+        >
+          发布
         </Button> : null,
         <Button
           type="text"

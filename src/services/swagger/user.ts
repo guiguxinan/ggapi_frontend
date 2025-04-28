@@ -1,5 +1,4 @@
 // @ts-ignore
-/* eslint-disable */
 import { request } from '@umijs/max';
 
 /** Create user This can only be done by the logged in user. POST /user */

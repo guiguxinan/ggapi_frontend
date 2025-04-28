@@ -1,5 +1,4 @@
 // @ts-ignore
-/* eslint-disable */
 import { request } from '@umijs/max';
 
 /** addInterfaceInfo POST /api/interfaceInfo/add */
@@ -43,6 +42,21 @@ export async function getInterfaceInfoByIdUsingGet(
     params: {
       ...params,
     },
+    ...(options || {}),
+  });
+}
+
+/** invokeInterfaceInfo POST /api/interfaceInfo/invoke */
+export async function invokeInterfaceInfoUsingPost(
+  body: API.InterfaceInfoInvokeRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseString_>('/api/interfaceInfo/invoke', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
     ...(options || {}),
   });
 }
